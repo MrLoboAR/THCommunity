@@ -22,6 +22,7 @@ ALLOWED_HOSTS = ['*',]
 # Application definition
 
 INSTALLED_APPS = [
+    #DJANGO PACKAGES
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -29,7 +30,12 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
+    #MAIN
     'Core',
+
+    #Apps Folder
+    'Apps.Forum',
+    'Apps.HomePage',
 ]
 
 MIDDLEWARE = [
@@ -47,7 +53,7 @@ ROOT_URLCONF = 'Core.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [os.path.join(BASE_DIR, 'templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -108,9 +114,9 @@ DATETIME_FORMAT = 'd / m / Y | H:m'
 
 USE_I18N = True
 
-USE_L10N = False
+USE_L10N = True
 
-USE_TZ = True
+USE_TZ = False
 
 
 
