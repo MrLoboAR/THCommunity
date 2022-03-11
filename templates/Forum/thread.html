@@ -1,0 +1,12 @@
+{% extends 'Home/index.html' %}
+{% block inheritance %}
+    <h3>{{post.title}}</h3>
+    <br>
+    <p>{{post.content}}</p>
+    <br>
+    <a href={% url 'Forum:update' post.id %}>Modificar Hilo</a>
+    <a href={% url 'Forum:delete'  post.id %}>Eliminar Publicacion</a>
+    <br>
+    <hr>
+    <span>Ediciones Realizadas: - | Publicacion Original: {{post.c_date}}| Ultima Edicion: -  - / - / -  -:-</span>
+{% endblock inheritance %}

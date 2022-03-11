@@ -110,11 +110,11 @@ LANGUAGE_CODE = 'es-mx'
 
 TIME_ZONE = 'America/Mexico_City'
 
-DATETIME_FORMAT = 'd / m / Y | H:m'
+DATETIME_FORMAT = 'D d / m / Y | H:i a'
 
 USE_I18N = True
 
-USE_L10N = True
+USE_L10N = False
 
 USE_TZ = False
 

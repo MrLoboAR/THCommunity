@@ -1,4 +1,27 @@
 {% extends 'Home/index.html' %}
+{% block nav %}
+    <a href={% url 'Forum:home' %}> Iniciar Hilo </a>
+{% endblock nav %}
+
 {% block inheritance %}
     <h2> Forum Under Construccion </h2>
+    <hr>
+    <section align=center>
+        <form method='POST'>
+            {% csrf_token %}
+            <p>Tema / Hilo / Pregunta | {{form.title}}</p>
+            <br>
+            {{form.content}}
+            <button type="submit">Publicar Hilo</button>
+        </form>
+    </section><hr>
+    {% for thread in threads %}
+        <h4> {{thread.title}} </h4>
+        <br>
+        <p> {{thread.content}} <span><a href={% url 'Forum:read' thread.title thread.id %}>...</a></span></p>
+        <br>
+        <span> <i>Publicado el dia: <b>{{thread.c_date}}</b></i> </span>
+        <hr>
+        {% endfor %}
+
 {% endblock inheritance %}

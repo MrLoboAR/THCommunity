@@ -1,0 +1,12 @@
+{% extends 'Forum/cr_thrd.html' %}
+{% block title %}
+{{form.title}}
+{% endblock title %}
+
+{% block desc %}
+{{form.content}}
+{% endblock  %}
+
+{% block button %}
+    <button type="submit">Actualizar Hilo</button>
+{% endblock button %}
