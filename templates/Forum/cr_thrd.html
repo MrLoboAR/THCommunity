@@ -1,0 +1,11 @@
+{% extends 'Home/index.html' %}
+{% block inheritance %}
+<form method='POST'>
+    {% csrf_token %}
+    <p>Tema / Hilo / Pregunta | {% block title %}{% endblock %}</p>
+    <br>
+    {% block desc %}{% endblock %}
+    {% block button %}
+    {% endblock button %}
+</form>
+{% endblock inheritance %}

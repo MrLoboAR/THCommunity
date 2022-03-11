@@ -11,6 +11,8 @@
         <p> Provisional navbar</p>
         <a href= {% url 'Home' %}>Home</a>
         <a href= {% url 'Forum:home' %}>Forum</a>
+        {% block nav %}
+        {% endblock nav %}
     </nav><hr>
     {% block inheritance %}
     {% endblock inheritance %}

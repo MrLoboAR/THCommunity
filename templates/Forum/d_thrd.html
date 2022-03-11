@@ -1,0 +1,24 @@
+{% extends 'Forum/cr_thrd.html' %}
+
+{% block title %}
+    <b>
+        <p>
+            {{post.title}}
+        </p>
+    </b>
+{% endblock %}
+
+{% block desc %}
+    <p>
+        {{post.content}}
+    </p>
+    <br>
+    <span>
+        <i> | Publicado el: <b>{{post.c_date}}</b></i> |
+    </span>
+    <br> 
+{% endblock %}
+
+{% block button %}
+    <button type="submit">Eliminar Hilo</button>
+{% endblock button %}
