@@ -1,5 +1,6 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from django.views.generic import View, UpdateView, DeleteView 
+
 from django.urls import reverse_lazy
 
 from .forms import Add_Thread_F
@@ -45,13 +46,20 @@ class R_Thread(View):
         return render(request, 'Forum/thread.html', context)
 
 
+
 class U_Thread(UpdateView):
     model = Post
     fields = ['title', 'content']
     template_name = 'Forum/u_thrd.html'
+    
+
+
+    def get_object(self):
+        post = Post.objects.get(id = self.request.pk)
+        return post
 
     def get_success_url(self):
-        pk = self.kwargs['pk']
+        #pk = self.kwargs['pk']
         return reverse_lazy('Forum:home')
 
 class D_Thread(DeleteView):
