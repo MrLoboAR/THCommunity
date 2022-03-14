@@ -8,5 +8,5 @@
     <a href={% url 'Forum:delete'  post.id %}>Eliminar Publicacion</a>
     <br>
     <hr>
-    <span>Ediciones Realizadas: - | Publicacion Original: {{post.c_date}}| Ultima Edicion: -  - / - / -  -:-</span>
+    <span>Ediciones Realizadas: {{post.edit}} | Publicacion Original: {{post.c_date}}| Ultima Edicion: -  - / - / -  -:-</span>
 {% endblock inheritance %}
